@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<body>
+    <button id="myButton">Click me!</button>
+    <p>You clicked on the button <span id="clickCount">0</span> times</p>
+    <button id="deactivate">Désactivate counting</button>
+    <script>
+        document.getElementById("myButton").addEventListener("click", klickFunktionen)
+
+        let number = 0
+
+        function klickFunktionen () {
+            number = number + 1
+            console.log('klickFunktionen körs', number)
+            document.getElementById("clickCount").textContent = number
+        }
+
+        document.getElementById("deactivate").addEventListener("click", deactivate)
+
+        function deactivate () {
+            console.log('deactivate körs')
+            document.getElementById("myButton").removeEventListener("click", klickFunktionen)
+        }
+
+    </script>
+</body>
+
+</html>
